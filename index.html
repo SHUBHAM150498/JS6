@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+	<div class="main"><h1>JavaScript Handson-6</h1></div>
+    <div class="main"><h1>Problem Solving</h1></div>
+	<br>
+	<div class="head">1. Find the Smaller Angle</div>
+	<div class="question">PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.</div>
+	<pre class="code">
+        var Minimal_Angle = (h, m) => 
+        {
+          h=h%12;
+          let hours=(h*360)/12 + (m*360)/(12*60);
+          let min=(m*360 )/(60);
+          let angle=Math.abs(hours-min);
+          if(angle>180){
+            angle=360-180;
+            
+          }
+          return angle;
+        };
+ 
+    </pre>
+    <br>
+    <hr>
+    <br>
+    <div class="head">2. Check whether the year is Leap year or not.</div>
+    <div class="question">Write a program which takes an year N as input from the user and find out whether the given year is a Leap Year or not.</div>
+    <pre class="code">
+        var Check_Leap = (year) => 
+        {
+         if ((year % 4 ===0) && ( year % 100 !==0) || (year % 400===0))
+         {
+           return "Leap Year"
+         }
+         else
+         {
+           return "Non Leap Year"
+         }  
+          
+        
+        };
+</pre>
+<br>
+<hr>
+<br>
+<div class="head">3. Perfect Number Check.</div>
+<div class="question">Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.<br>Now, You are given an integer N, write a program to check whether the given number is a Perfect Number or not.</div>
+<pre class="code">
+    var Perfect_Check = (N) => 
+    {
+     let sum = 1;
+    
+    for(let i = 2; i <= N/2; i++)  {
+      if(N/i === 0) {
+        sum = sum + i;
+      }
+    }
+    
+    if(sum == N) {
+      return "YES"
+    }
+    
+    return "NO";        
+            
+    };
+</pre>
+<br>
+<hr>
+<br>
+<div class="head">4. Reverse a Number.</div>
+<div class="question">Write a program which takes a numebr N as input from the user and You need to reverse the number.</div>
+<pre class="code">
+    var Reverse_Number = (N) => 
+    {
+      N = N + "";
+        let num = N.split("").reverse().join("");
+      return parseFloat(num);   
+    
+    };
+</pre>
+<br>
+<hr>
+<br>
+<div class="head">5. Substring Check.</div>
+<div class="question">You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not.</div>
+<pre class="code">
+    var Substring_Check = (S1, S2) => 
+    {
+      if(S1.includes(S2))
+       {
+         return "YES"
+       }
+       else
+       {
+         return "NO"
+       }         
+    };
+</pre>
+<br>
+</div>
+</body>
+</html>
